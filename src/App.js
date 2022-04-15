@@ -1,12 +1,30 @@
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import BreakfastPage from './Pages/Home/BreakfastPage/BreakfastPage';
+import DinnerPage from './Pages/Home/DinnerPage/DinnerPage';
 import HomePage from './Pages/Home/HomePage/HomePage';
+import LunchPage from './Pages/Home/LunchPage/LunchPage';
+import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 
 function App() {
   return (
     <div >
      <Header></Header>
-     <HomePage></HomePage>
+
+   
+     <Routes>
+    <Route path='/' element={<HomePage></HomePage>}></Route>
+    <Route path='/home' element={<HomePage></HomePage>}></Route>
+    <Route path='/breakfast' element={<BreakfastPage></BreakfastPage>}></Route>
+<Route path='/lunch' element={<LunchPage></LunchPage>}></Route>
+<Route path='/dinner' element={<DinnerPage></DinnerPage>}></Route>
+
+<Route path='*' element={<NotFound></NotFound>}></Route>
+
+     </Routes>
+
+     {/* <HomePage></HomePage> */}
     </div>
   );
 }

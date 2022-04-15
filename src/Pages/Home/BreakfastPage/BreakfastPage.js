@@ -6,7 +6,9 @@ const BreakfastPage = () => {
     const [breakfast]=useBreakfast()
 
     return (
+   
         <div className="md:px-28 my-10 grid md:grid-cols-3 grid-col-1 md:mb-0 mb-8 gap-5">
+                
            {
                breakfast.map(data =>  <BreakfastCard key={data.id} data={data}></BreakfastCard>)
            }

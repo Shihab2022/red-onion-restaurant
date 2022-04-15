@@ -7,6 +7,7 @@ const DinnerPage = () => {
     
     return (
         <div className="md:px-28 my-10 grid md:grid-cols-3 grid-col-1 md:mb-0 mb-8 gap-5">
+     
            {
                dinner.map(data =>  <DinnerCard key={data.id} data={data}></DinnerCard>)
            }
