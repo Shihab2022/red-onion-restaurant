@@ -1,19 +1,25 @@
 import React from 'react';
 import logo2 from '../../../images/logo2.png';
-import {  BsFillCartPlusFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
 const Header = () => {
     return (
-        <div className='px-20  my-5'>
-           <div className="flex justify-between items-center">
-               <img style={{ height:'43px'}} src={logo2} alt="" />
-               <div className="flex justify-around items-center font-bold">
-              
-               <h3 className="text-3xl text-red-600"> < BsFillCartPlusFill/> </h3>
-               <Link className="mx-14" to='/'>Login</Link>
-               <Link className="px-5 text-white py-2 bg-rose-700 rounded-full" to='/'>Sign Up</Link>
-               </div>
-           </div>
+  
+
+        <div className='md:px-14'>
+            <header className="text-gray-600 body-font">
+  <div className="container mx-auto flex flex-wrap  p-5 flex-col md:flex-row items-center">
+    <Link to='/' className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+     
+    <img style={{ height:'43px'}} src={logo2} alt="" />
+    </Link>
+    <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
+      <Link to='/' className="mr-5 px-5 text-white py-2 bg-amber-600 rounded-full hover:text-gray-900">Login</Link>
+      <Link to='/' className="mr-5 px-5 text-white py-2 bg-rose-700 rounded-full hover:text-gray-900">Sign Up</Link>
+    
+    </nav>
+  
+  </div>
+</header>
         </div>
     );
 };
