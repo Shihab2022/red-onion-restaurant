@@ -4,6 +4,7 @@ import BreakfastPage from './Pages/Home/BreakfastPage/BreakfastPage';
 import DinnerPage from './Pages/Home/DinnerPage/DinnerPage';
 import HomePage from './Pages/Home/HomePage/HomePage';
 import LunchPage from './Pages/Home/LunchPage/LunchPage';
+import SignIn from './Pages/Login/SignIn/SignIn';
 import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
 
@@ -23,7 +24,7 @@ function App() {
 <Route path='*' element={<NotFound></NotFound>}></Route>
 
      </Routes>
-
+<SignIn></SignIn>
      {/* <HomePage></HomePage> */}
     </div>
   );
