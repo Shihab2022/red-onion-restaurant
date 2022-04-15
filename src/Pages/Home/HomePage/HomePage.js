@@ -1,9 +1,11 @@
 import React from 'react';
+import BannerPage from '../BannerPage/BannerPage';
 
 const HomePage = () => {
     return (
         <div>
-            <h1>from home </h1>
+          
+            <BannerPage></BannerPage>
         </div>
     );
 };
