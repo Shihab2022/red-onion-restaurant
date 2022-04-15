@@ -1,6 +1,6 @@
 import React from 'react';
 
-const DinnerCard = ({data}) => {
+const FoodCard = ({data}) => {
     const {name,about,balance,picture1}=data
     return (
       <div className='flex justify-center items-center'>
@@ -16,4 +16,4 @@ const DinnerCard = ({data}) => {
     );
 };
 
-export default DinnerCard;
+export default FoodCard;
