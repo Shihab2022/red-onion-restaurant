@@ -20,12 +20,10 @@ function App() {
     <Route path='/breakfast' element={<BreakfastPage></BreakfastPage>}></Route>
 <Route path='/lunch' element={<LunchPage></LunchPage>}></Route>
 <Route path='/dinner' element={<DinnerPage></DinnerPage>}></Route>
-
+<Route path='/signIn' element={<SignIn></SignIn>}></Route>
 <Route path='*' element={<NotFound></NotFound>}></Route>
 
      </Routes>
-<SignIn></SignIn>
-     {/* <HomePage></HomePage> */}
     </div>
   );
 }
