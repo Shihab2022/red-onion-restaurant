@@ -1,7 +1,15 @@
 import React from 'react';
 import logo2 from '../../../images/logo2.png';
 import { Link } from 'react-router-dom';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../../firebase.init';
+import { signOut } from 'firebase/auth';
 const Header = () => {
+  const [user, loading, error] = useAuthState(auth);
+  console.log(user)
+  const logOutId=()=>{
+    signOut(auth);
+  }
     return (
   
 
@@ -13,9 +21,16 @@ const Header = () => {
     <img style={{ height:'43px'}} src={logo2} alt="" />
     </Link>
     <nav className="md:ml-auto flex flex-wrap items-center text-base justify-center">
-      <Link to='/' className="mr-5 px-5 text-white py-2 bg-amber-600 rounded-full hover:text-gray-900">Login</Link>
-      <Link to='/signIn' className="mr-5 px-5 text-white py-2 bg-rose-700 rounded-full hover:text-gray-900">Sign Up</Link>
+      {
+        user ?  
+         <Link to='/login' onClick={logOutId} className="mr-5 px-5 text-white py-2 bg-amber-600 rounded-full hover:text-gray-900">Log Out</Link> :
+         <Link to='/login' className="mr-5 px-5 text-white py-2 bg-amber-600 rounded-full hover:text-gray-900">Login</Link>
+      }
+     
+    {
+      user ? '' : <Link to='/signIn' className="mr-5 px-5 text-white py-2 bg-rose-700 rounded-full hover:text-gray-900">Sign Up</Link>
     
+    }
     </nav>
   
   </div>

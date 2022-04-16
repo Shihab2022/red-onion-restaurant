@@ -4,6 +4,8 @@ import './App.css';
 import useFoodData from './Hook/foodData';
 import FoodDetails from './Pages/FoodDetails/FoodDetails';
 import HomePage from './Pages/Home/HomePage/HomePage';
+import Login from './Pages/Login/LoginPage';
+import RequireAuth from './Pages/Login/RequireAuth';
 import SignIn from './Pages/Login/SignIn/SignIn';
 import NotFound from './Pages/NotFound/NotFound';
 import Header from './Pages/Shared/Header/Header';
@@ -20,8 +22,15 @@ function App() {
      <Routes>
     <Route path='/' element={<HomePage></HomePage>}></Route>
     <Route path='/home' element={<HomePage></HomePage>}></Route>
-    <Route path='/home/:foodId' element={<FoodDetails></FoodDetails>}></Route>
+
+    <Route path='/home/:foodId' element={
+      <RequireAuth>
+ <FoodDetails></FoodDetails>
+      </RequireAuth>
+    }></Route>
+   
 <Route path='/signIn' element={<SignIn></SignIn>}></Route>
+<Route path='/login' element={<Login></Login>}></Route>
 <Route path='*' element={<NotFound></NotFound>}></Route>
 
      </Routes>
