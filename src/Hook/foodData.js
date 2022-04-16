@@ -6,7 +6,7 @@ const useFoodData=()=>{
        fetch('foodData.json')
        .then(res=>res.json())
        .then(data=>setSetData(data))
-   },[])
+   },[foodData])
    return [foodData,setSetData]
 }
 export default useFoodData
