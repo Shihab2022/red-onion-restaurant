@@ -15,7 +15,7 @@ useEffect(()=>{
     setFoundFood(findFood)
 },[foodId])
 
- 
+ console.log(mainData)
   console.log(foundFood);
   const { name, picture1, picture2, picture3, about, balance } = foundFood;
 

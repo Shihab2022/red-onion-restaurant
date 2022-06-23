@@ -5,8 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
 const Header = () => {
-  const [user, loading, error] = useAuthState(auth);
-  console.log(user)
+  const [user] = useAuthState(auth);
   const logOutId=()=>{
     signOut(auth);
   }
